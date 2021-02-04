@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-props-no-spreading */
-// Arquivo usado  para váriaveis globais
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Head from 'next/head';
@@ -34,7 +33,6 @@ const { theme } = db;
 // eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps }) {
   return (
-    // eslint-disable-next-line react/jsx-filename-extension
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -42,6 +40,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />
       </ThemeProvider>
     </>
